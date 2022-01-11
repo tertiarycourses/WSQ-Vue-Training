@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2-7 v-show</title>
+</head>
+<body>
+
+  <div id="app">
+    How many durians you eat : <input type = "text" v-model = "num">
+    <br/>
+    <span v-show ="num > 0">You ate {{num}} durians</span>
+    <span v-show ="num > 4">You ate {{num}} durians. That is a lot!</span>
+  
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+      return {
+        num: 0
+      }
+    }
+  }
+  Vue.createApp(HelloVueApp).mount('#app')
+  </script>
+</body>
+</html>

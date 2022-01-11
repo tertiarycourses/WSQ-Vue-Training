@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3-3 Style Binding</title>
+</head>
+<body>
+  <div id="hello-vue">
+      <span v-bind:style="fancy">
+        {{message}}
+      </span>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+      return {
+        message : "Hello Vue!",
+        fancy: {
+            backgroundColor: 'lightgrey',
+            borderRadius: '10px',
+            padding: '10px',
+            marginTop: '30px'
+            }
+        }}
+    }
+    Vue.createApp(HelloVueApp).mount('#hello-vue')
+  </script>
+</body>
+</html>

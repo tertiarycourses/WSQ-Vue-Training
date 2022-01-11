@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3-13 methods</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Celsius: {{ Celsius }}</h1>
+    <h1>Fahrenheit: {{ _______________ }}</h1>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+        return{
+          Celsius: 30
+        }
+      },
+      ____________{
+        Fahrenheit() {
+            return this.Celsius*9/5+32
+          }
+        }  
+    }
+    Vue.createApp(HelloVueApp).mount('#app')
+
+  </script>
+</body>
+</html>

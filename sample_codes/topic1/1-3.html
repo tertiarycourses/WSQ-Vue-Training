@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>1-3 Declarative Rendering Demo</title>
+</head>
+<body>
+  <div id="counter">
+    Counter: {{ counter }}
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const Counter = {
+      data() {
+        return {
+      counter: 0
+        }
+      },
+    mounted() {
+      setInterval(() => {
+        this.counter++
+        }, 1000)
+      }
+    }
+  Vue.createApp(Counter).mount('#counter')
+  </script>
+</body>
+</html>

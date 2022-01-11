@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>4-9 nested components</title>
+</head>
+<body>
+  <div id="app">
+    <welcome></welcome>
+</div>
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+   // Create a Vue application
+    const app = Vue.createApp({})
+    app.component('welcome', {
+      template: '<div>\
+        <hello first_name="Elon" last_name="Musk" ></hello>\
+        <h1>Welcome to Vue JS Training</h1></div>' 
+      })
+    app.component('hello', {
+      props: ['first_name','last_name'],
+      template: '<h1> Hello {{ first_name }} {{last_name}}</h1>'
+      })   
+    app.mount('#app')
+</script>
+</body>
+</html>

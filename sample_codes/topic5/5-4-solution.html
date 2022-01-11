@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>5-4 watch</title>
+</head>
+<body>
+    <div id="app">
+      Celsius : <input type = "text" v-model.number.lazy = "celsius">
+      Fahrenheit : <input type = "text" v-model.number.lazy = "fahrenheit">
+    </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+        return {
+          celsius : 0,
+          fahrenheit:32
+        }
+      },
+      watch : {
+        celsius(val) {
+          this.celsius = val;
+          this.fahrenheit = Math.round(val*9/5+32);
+          },
+        fahrenheit(val) {
+          this.celsius = Math.round((val-32)*5/9); 
+          this.fahrenheit = val; 
+          }
+        }
+      }
+  Vue.createApp(HelloVueApp).mount('#app')
+  </script>  
+</body>
+</html>

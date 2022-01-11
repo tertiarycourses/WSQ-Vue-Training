@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2-8 v-show</title>
+</head>
+<body>
+
+  <div id="app">
+    <input type="checkbox" v-model="selectedInterests" value="Running"> Running
+    <input type="checkbox" v-model="selectedInterests" value="Cycling"> Cycling
+    <input type="checkbox" v-model="selectedInterests" value="Swimming"> Swimming
+
+    <p v-show="selectedInterests.length>0">You selected: {{selectedInterests.join(', ')}}</p>
+    <p v-show="selectedInterests.length==0">Please selected one of the above</p>
+  
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+      return {
+        interests: ['Running','Cycling','Swimming'],
+        selectedInterests: []
+      }
+    }
+  }
+  Vue.createApp(HelloVueApp).mount('#app')
+  </script>
+</body>
+</html>

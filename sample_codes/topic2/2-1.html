@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2-1 v-bind</title>
+</head>
+<body>
+
+  <div id="hello-vue">
+
+    <h1> v-bind url</h1>
+    <a href={{url}} >Search without v-bind </a> <br/>
+    <a v-bind:href="url">Search with v-bind</a> <br/>
+    <a v-bind:href="url + '?q=vue'">Search Vue</a><br/>
+    <a :href="url + '?q=vue'">Search Vue with shorhand</a>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+      return {
+        url: "http://www.google.com/search"
+      }
+    }
+  }
+  Vue.createApp(HelloVueApp).mount('#hello-vue')
+  </script>
+</body>
+</html>

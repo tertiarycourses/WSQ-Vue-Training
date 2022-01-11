@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3-8 Class Binding</title>
+  <style>
+    .square {
+         width: 200px;
+         height: 200px;
+         margin-bottom: 20px;
+    }
+    .blue {
+        background-color: blue;
+    }
+    .red {
+        background-color: red;
+    }
+    .yellow {
+        background-color: _______________;
+    }
+</style>
+</head>
+<body>
+  <div id="app">
+    <div class="square" v-bind:class="{blue: cold}"></div>
+    <div class="square" v-bind:class="{red: hot}"></div>
+    <div class="square" v-bind:class="_____________"></div>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+      return {
+        cold: true,
+        hot: true,
+        ________________
+        }}
+    }
+    app = Vue.createApp(HelloVueApp).mount('#app')
+  </script>
+</body>
+</html>

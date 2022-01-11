@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2-4 Conditonal Rendering</title>
+</head>
+<body>
+
+  <div id="app">
+    How many durians you eat : <input type = "text" v-model = "num">
+    <br/>
+    <span v-if="num > 4">You ate {{num}} durians. That is a lot</span>
+    <span v-else-if="num > 0">You ate {{num}} durians</span>
+    <span v-else>You have not eaten durian</span>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+      return {
+        num: 1
+      }
+    }
+  }
+  Vue.createApp(HelloVueApp).mount('#app')
+  </script>
+</body>
+</html>

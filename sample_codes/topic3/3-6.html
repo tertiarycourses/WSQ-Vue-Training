@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3-6 Event Modifier</title>
+</head>
+<body>
+
+  <div id="app">
+    <form>
+      <button v-if="!loggedIn" v-on:click.prevent="logIn('Mike')">Log in</button>  
+      <button v-else v-on:click.prevent="logOut">Log out</button>{{msg}}    
+  </form>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+      return {
+        msg: '' ,
+        loggedIn: false
+        }
+      },
+      methods: {
+        logIn(username) {
+          this.loggedIn = true;
+          this.msg = 'Welcome, ' + username + '!';
+          },
+          logOut() {
+            this.loggedIn = false;
+            this.msg = 'So long!';
+          }
+        }
+    }
+  Vue.createApp(HelloVueApp).mount('#app')
+  </script>
+</body>
+</html>

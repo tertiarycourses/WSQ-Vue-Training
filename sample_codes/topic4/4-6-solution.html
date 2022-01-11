@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>4-6 prop</title>
+</head>
+<body>
+  <div id="app">
+    <h2>Todo list:</h2>
+    <ol>
+        <todo-item v-for="item in todoList" v-bind:todo="item"></todo-item>
+    </ol>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+   
+   // Create a Vue application
+   const ToDoApp = {
+      data() {
+      return {
+        todoList: ['Buy Groceries','Buy Lunch','Watch Movie']
+      }
+    }
+  }
+  const app = Vue.createApp(ToDoApp)
+
+  app.component('todo-item', {
+    props: ['todo'],
+    template: '<li>{{todo}}</li>'
+  })
+  app.mount('#app')
+
+  </script>
+</body>
+</html>

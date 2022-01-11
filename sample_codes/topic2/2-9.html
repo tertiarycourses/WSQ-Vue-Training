@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2-9 v-for</title>
+</head>
+<body>
+
+  <div id="app">
+    <ul>
+      <li v-for="i in interests">{{i}} </li>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+      return {
+        interests: ['Running','Cycling','Swimming']
+      }
+    }
+  }
+  Vue.createApp(HelloVueApp).mount('#app')
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>5-10 Form Binding</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+
+      <div class="cart">Cart({{ cart.length }})</div>
+      <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({
+                data() {
+                    return {
+                        cart: [],
+                        premium: true
+                    }
+                },
+                methods: {
+                    updateCart(id) {
+                        this.cart.push(id)
+                    }
+                }
+            })
+    </script>
+    <script src="./components/ProductDisplay.js"></script>
+    <script src="./components/ReviewForm2.js"></script>
+    <script src="./components/ReviewList2.js"></script>
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>

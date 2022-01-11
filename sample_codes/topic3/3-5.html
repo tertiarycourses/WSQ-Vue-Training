@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3-4 Class Binding</title>
+  <style>
+    .salmon {
+      background-color:lightsalmon;
+      border-radius: 25px;
+      padding:10px;
+      margin: 30px;
+      font-family: 'Roboto'
+    }
+      </style>
+</head>
+<body>
+  <div id="hello-vue">
+    <span :class='{salmon:Issalmon}'>{{message}}</span>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+      return {
+        message : "Hello Vue!",
+        name: 'Ally',
+        Issalmon: true,
+        }}
+    }
+    Vue.createApp(HelloVueApp).mount('#hello-vue')
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3-3 v-on</title>
+</head>
+<body>
+
+  <div id="app">
+    <p>Firt number : <input type = "text" v-model.number.lazy = "num1"></p>
+    <p>Second number : <input type = "text" v-model.number.lazy = "num2"></p>
+    <button v-on:click = "answer">Show Answer</button>
+    <p v-show = "num1>0">{{num1}} + {{num2}} = {{total}}</p>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const HelloVueApp = {
+      data() {
+      return {
+        num1: 0,
+        num2 : 0,
+        total : 0
+        }
+      },
+      methods : {
+          answer() {
+          return this.total =  this.num1+ this.num2;
+          }
+        }
+    }
+  Vue.createApp(HelloVueApp).mount('#app')
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>4-12 slot</title>
+</head>
+<body>
+  <div id="app">
+    <h2>Todo list:</h2>
+    <ol>
+      <todo-item v-for="item in SundayList" v-bind:todo="item">Sunday</todo-item>
+      <todo-item v-for="item in MondayList" v-bind:todo="item">Monday</todo-item>
+      <todo-item v-for="item in TuesdayList" v-bind:todo="item"></todo-item>
+    </ol>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+   
+   // Create a Vue application
+   const ToDoApp = {
+      data() {
+      return {
+        SundayList: ['Buy Groceries','Watch Movie','Visit Mom'],
+        MondayList: ['Presentation','Pickup Laundry'],
+        TuesdayList: ['Medical Appointment','Send Laundry']
+      }
+    }
+  }
+  const app = Vue.createApp(ToDoApp)
+
+  app.component('todo-item', {
+    props: ['todo'],
+    template: '<li>{{todo}} on <slot>Tuesday</slot></li>'
+  })
+  app.mount('#app')
+
+  </script>
+</body>
+</html>

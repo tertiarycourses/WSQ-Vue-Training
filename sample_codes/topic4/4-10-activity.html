@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>4-10 nested components</title>
+</head>
+<body>
+  <div id="app">
+    <grocery_______________________"></grocery>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+   
+   // Create a Vue application
+    const GroceryApp = {
+      data() {
+      return {
+        Tobuy_list: ['Milk','Bread','Kaya']
+        }
+      }
+    }
+    const app = Vue.createApp(GroceryApp)
+    app.component('grocery', {
+      props: ['grocerylist'],
+      template: '<div>\
+            <h2>Grocery List:</h2>\
+            <ol>\
+              <grocery-item v-for="_______________" v-bind:_____________"></grocery-item>\
+            </ol>\
+            </div>'
+        })
+    app.component('grocery-item', {
+        props: ['buy_item'],
+        template: '<li>{{ buy_item}}</li>'
+        })
+    
+    app.mount('#app')
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>5-5 Checkbox</title>
+</head>
+<body>
+  <div id="v-model-radiobutton">
+    <input type="radio" id="one" value="One" v-model="picked" />
+    <label for="one">One</label>
+    <br />
+    <input type="radio" id="two" value="Two" v-model="picked" />
+    <label for="two">Two</label>
+    <br />
+    <span>Picked: {{ picked }}</span>
+  </div>
+  
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+  Vue.createApp({
+  data() {
+    return {
+      picked: ''
+    }
+  }
+}).mount('#v-model-radiobutton')
+  </script>  
+</body>
+</html>

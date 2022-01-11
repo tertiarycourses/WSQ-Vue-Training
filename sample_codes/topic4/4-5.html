@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>4-5 Components and Prop Demo modified from Vue Mastery</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+      <div class="cart">Cart({{ cart }})</div>
+      <product-display :premium="premium"></product-display>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    cart: 0,
+                    premium: true
+                }
+            },
+            methods: {}
+        })
+    </script>
+    <script src="./components/ProductDisplay.js"></script>
+    <script src="./components/ProductDetails.js"></script>
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>

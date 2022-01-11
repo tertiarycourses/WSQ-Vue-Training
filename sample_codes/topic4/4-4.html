@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>4-4 prop</title>
+</head>
+<body>
+  <div id="blog-post-demo" class="demo">
+    <blog-post title="My journey with Vue"></blog-post>
+    <blog-post title="Blogging with Vue"></blog-post>
+    <blog-post title="Why Vue is so fun"></blog-post>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+   
+   // Create a Vue application
+   const app = Vue.createApp({})
+
+   app.component('blog-post', {
+    props: ['title'],
+    template: `<h4>{{ title }}</h4>`
+  })
+  app.mount('#blog-post-demo')
+  </script>
+</body>
+</html>

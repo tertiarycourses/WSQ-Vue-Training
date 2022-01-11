@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3-1 v-on</title>
+</head>
+<body>
+
+  <div id="basic-event">
+    <button @click="counter += 1">Add 1</button>
+    <p>The button above has been clicked {{ counter }} times.</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          counter: 0
+        }
+      }
+    }).mount('#basic-event')
+  </script>
+</body>
+</html>
